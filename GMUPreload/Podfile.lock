@@ -1,0 +1,28 @@
+PODS:
+  - Masonry (1.1.0)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.6)
+  - ReactiveObjC (3.1.0)
+
+DEPENDENCIES:
+  - Masonry
+  - MJExtension
+  - MJRefresh
+  - ReactiveObjC
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - ReactiveObjC
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+
+PODFILE CHECKSUM: 95aa4d8ae003932de83f0ef845144aa74e1b2408
+
+COCOAPODS: 1.5.3
