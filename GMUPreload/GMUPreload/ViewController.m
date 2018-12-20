@@ -18,7 +18,7 @@ GUMPreloadTableViewDelegate
 >
 @property(nonatomic,strong)GUMBaseTableView *listTableView;
 @end
-
+static CGFloat currentPage ;
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -33,17 +33,6 @@ GUMPreloadTableViewDelegate
         [self.view addSubview:iv];
         iv.preloadTableViewDelegate = self;
         iv.tableFooterView  =[UIView new];
-        @weakify(self);
-        iv.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            @strongify(self);
-            [self tableViewDidTriggerHeaderRefresh];
-        }];
-        iv.mj_header.automaticallyChangeAlpha = YES;
-        iv.mj_footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
-            @strongify(self);
-            [self tableViewDidTriggerFooterRefresh];
-        }];
-        iv.mj_footer.automaticallyChangeAlpha = YES;
         [iv mas_makeConstraints:^(MASConstraintMaker *make) {
             if (iOS11) {
                 make.edges.mas_equalTo(self.view.safeAreaInsets);
@@ -58,26 +47,13 @@ GUMPreloadTableViewDelegate
 #pragma mark GUMPreloadTableViewDelegate
 - (void)preloadTableViewLoadData:(BOOL)isRefresh
 {
+    if (isRefresh) {
+        currentPage = 1;
+    }else{
+        currentPage ++ ;
+    }
     
-    
+    NSLog(@"网络请求");
 }
 
-
-/**
- 上拉刷新
- */
--(void)tableViewDidTriggerHeaderRefresh
-{
-    
-    
-}
-
-
-/**
- 下拉加载
- */
--(void)tableViewDidTriggerFooterRefresh
-{
-    
-}
 @end
